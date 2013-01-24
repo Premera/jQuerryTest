@@ -1,0 +1,132 @@
+
+!DOCTYPE html>
+<html>
+    <head>
+        <title>
+	        Mobile
+        </title>
+     </head>
+    
+    <body>
+            
+        <div class="ui-page ui-body-c ui-page-active">
+        
+            <div id="content" class="ui-content">
+           
+	            <div class="ui-body gradiantbox ui-corner-all ">
+        
+                    <form action="" method="post">
+                        
+			            <fieldset>
+                            
+                             <a href="index.html">Home</a>
+                            
+                            <h2 class="touppercase">LogOn</h2>
+                        
+                            <div class="hp-form-div">
+                                
+                                <label for="UserName">User Name</label>
+                                <div>
+                                    <input data-val="true" data-val-required="The User Name field is required." id="UserName" name="UserName" type="text" value="" />
+                                </div>
+                            </div>
+                            
+                            <div class="hp-form-div">
+                                
+                                <label for="Password">Password</label>
+                                <div>
+                                    <input data-val="true" data-val-required="The Password field is required." id="Password" name="Password" type="password" />
+                                </div>
+                            </div>
+                            
+                            <div class="hp-form-div">
+                                
+                                <input data-val="true" data-val-required="The Remember User Name? field is required." id="RememberMe" name="RememberMe" type="checkbox" value="true" /><input name="RememberMe" type="hidden" value="false" />
+                                <label for="RememberMe">Remember User Name?</label>
+                            </div>
+                            
+                            <div style="height: 10px;">
+                            
+                            </div>
+                            
+                            <div class="center">
+                                
+                              
+                                <input class="login_button" type="submit" value="Secure Member Log In" /> 
+                            </div>
+                            
+                            <button id="ajax">ajax call</button>
+                                        
+                            <button id="json">json call</button>
+                            
+                            <script type="text/javascript">
+                                $('#json').click(function(){ 
+                                    alert('json call last update');
+                                     $.getJSON("https://api.premera.com/Member/Benefits/Benefits.svc/MemberData?lob=Premera",
+                                     function(data) {
+                                        alert(data);         
+                                      });   
+                                });
+                            
+                                $('#ajax').click(function(){ 
+                                    alert('ajax');
+                                     $.ajax({ 
+                                         type: "GET",
+                                         dataType: "json",
+                                         headers: {"Content-Type" : "application/json"},
+                                         username: 'ionduican',
+                                         password: 'Premera2012',
+                                         crossDomain: true,
+                                         url: "https://api.premera.com/Member/Benefits/Benefits.svc/MemberData?lob=Premera",
+                                         success: function(data){        
+                                            alert(data);
+                                         }
+                                     });
+                                });
+                            
+                            </script>
+                            
+			            </fieldset>
+                        
+	                </form>
+ 
+                    <div>
+                            
+                     Forgot your user name or need to register?
+                    <br />
+                    Visit the <a href="https://www.premera.com/portals/login.aspx/?MobileFullSiteRequest=true" rel="external">Full Site</a>
+                
+                    </div>
+                    
+	            </div>
+    
+                <a href="#" onclick="javascript:alert('Your log in username and password matches the one you created for premera.com/portals/login.aspx/?MobileFullSiteRequest=true. If you have not registered, register at https://www.premera.com/portals/login.aspx/?MobileFullSiteRequest=true or call customer service 1-800-722-1471.');return false;">
+                    <span class="hp-help ui-icon-question"></span>
+                </a>
+         
+            </div>
+       
+            <div class="floatmiddlecontainer">
+                
+                <a href="https://m.premera.com/secure/premera/Home/TermsAndConditions">Terms &amp; Conditions</a> | 
+                <a href="https://m.premera.com/secure/premera/Home/Privacy">Privacy</a> 
+            
+            </div>
+        
+            <div class="floatmiddlecontainer hp-copyright">Copyright &copy; 2013   
+                        Premera Blue Cross 
+            
+            </div>
+            
+            <div data-role="footer">
+                
+             
+                <h4></h4>
+            </div>   
+        </div> 
+   
+    </body>
+      
+</html>
+ 
+ 
